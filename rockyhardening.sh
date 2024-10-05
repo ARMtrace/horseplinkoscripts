@@ -83,6 +83,13 @@ for user in $( sed 's/:.*//' /etc/passwd);
 	  fi
 done
 
+#Backup file required for scoring
+cp /files/ImaHorse.png ~
+cp /files/ImaHorse.png /bin
+cp /files/ImaHorse.png /media
+cp /files/ImaHorse.png /var
+chattr +i /files/ImaHorse.png
+
 # Secure FTP configuration (vsftpd) (may need debugging come plinko)
 echo "Configuring vsftpd (FTP server)..."
 sudo dnf install vsftpd -y
